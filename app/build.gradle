@@ -16,17 +16,21 @@ android {
         applicationId 'cn.uvuejs.kux'
         minSdk 21
 		targetSdk 30
-        versionCode 100
-        versionName '1.0.0'
+        versionCode 117
+        versionName '1.1.7'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"video\\\",\\\"class\\\":\\\"uts.sdk.modules.DCloudUniVideo.VideoComponent\\\"}]\""
+        buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"x-camrea-u\\\",\\\"class\\\":\\\"uts.sdk.modules.xCamreaU.XCamreaUComponent\\\"}]\""
+        buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"x-mlkit-scannig-u\\\",\\\"class\\\":\\\"uts.sdk.modules.xMlkitScannigU.XMlkitScannigUComponent\\\"}]\""
+        buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"x-qr-u\\\",\\\"class\\\":\\\"uts.sdk.modules.xQrU.XQrUComponent\\\"}]\""
+        buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"x-svg-u\\\",\\\"class\\\":\\\"uts.sdk.modules.xSvgU.XSvgUComponent\\\"}]\""
+        buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"video\\\",\\\"class\\\":\\\"uts.sdk.modules.DCloudUniVideo.VideoComponent\\\"},{\\\"name\\\":\\\"canvas\\\",\\\"class\\\":\\\"io.dcloud.canvas.CanvasComponent\\\",\\\"node\\\":\\\"io.dcloud.canvas.UniCanvasElementImpl\\\"}]\""
 		
 
         ndk {
-            abiFilters "arm64-v8a"
+            abiFilters "arm64-v8a","armeabi-v7a","x86","x86_64"
         }
 
     }
@@ -86,11 +90,38 @@ dependencies {
     implementation project(':uniappx')
     implementation fileTree(include: ['*.aar', '*.jar'], dir: '../uniappx/libs')
     implementation "com.squareup.okhttp3:okhttp:3.12.12"
-	implementation project(':kux-pip')
+	implementation project(':uts-get-native-view')
+	implementation project(':x-animation-s')
+	implementation project(':x-call-phone')
+	implementation project(':x-camrea-u')
+	implementation project(':x-clipboard-s')
+	implementation project(':x-crypto-s')
+	implementation project(':x-file-s')
+	implementation project(':x-loading-s')
+	implementation project(':x-mlkit-scannig-s')
+	implementation project(':x-mlkit-scannig-u')
+	implementation project(':x-modal-s')
+	implementation project(':x-network-change')
+	implementation project(':x-ocr-s')
+	implementation project(':x-openweb')
+	implementation project(':x-qr-u')
+	implementation project(':x-runnable-s')
+	implementation project(':x-screenshot-s')
+	implementation project(':x-share-s')
+	implementation project(':x-svg-u')
+	implementation project(':x-tips-s')
+	implementation project(':x-toast-s')
+	implementation project(':x-window-grey')
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okio:okio:1.14.0'
+    implementation 'com.alibaba:fastjson:1.2.83'
+    implementation 'com.aliyun.dpa:oss-android-sdk:+'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.core:core:1.1.0'
+    implementation 'androidx.webkit:webkit:1.6.0'
     implementation 'com.squareup.okhttp3:okhttp:3.12.12'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.0'
 }
