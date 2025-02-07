@@ -112,10 +112,6 @@ dependencies {
 	implementation project(':x-tips-s')
 	implementation project(':x-toast-s')
 	implementation project(':x-window-grey')
-    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-    implementation 'com.squareup.okio:okio:1.14.0'
-    implementation 'com.alibaba:fastjson:1.2.83'
-    implementation 'com.aliyun.dpa:oss-android-sdk:+'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.core:core:1.1.0'
