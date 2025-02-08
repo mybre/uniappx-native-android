@@ -1,5 +1,5 @@
 @file:Suppress("UNCHECKED_CAST", "USELESS_CAST", "INAPPLICABLE_JVM_NAME", "UNUSED_ANONYMOUS_PARAMETER")
-package uni.UNIBEFAB40;
+package uni.UNI1F9DC0E;
 import io.dcloud.uniapp.*;
 import io.dcloud.uniapp.extapi.*;
 import io.dcloud.uniapp.framework.*;
@@ -14,33 +14,16 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Deferred;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.async;
-import io.dcloud.uniapp.extapi.`$emit` as uni__emit;
 import uts.sdk.modules.utsGetNativeView.canWebViewGoBack;
 import uts.sdk.modules.utsGetNativeView.canWebViewGoForward;
 import uts.sdk.modules.utsGetNativeView.hasNativeView;
 import io.dcloud.uniapp.extapi.createWebviewContext as uni_createWebviewContext;
 import io.dcloud.uniapp.extapi.getElementById as uni_getElementById;
+import io.dcloud.uniapp.extapi.getSystemInfoSync as uni_getSystemInfoSync;
 import io.dcloud.uniapp.extapi.getWindowInfo as uni_getWindowInfo;
 import io.dcloud.uniapp.extapi.showModal as uni_showModal;
 open class GenPagesIndexIndex : BasePage {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {
-        onPageScroll(fun(e: OnPageScrollOptions) {
-            xProvitae.scrollTop = e.scrollTop;
-        }
-        , __ins);
-        onResize(fun(_: OnResizeOptions) {
-            uni__emit("onResize", fun() {});
-        }
-        , __ins);
-        onLoad(fun(_: OnLoadOptions) {}, __ins);
-        onPageHide(fun() {
-            uni__emit("onHide", fun() {});
-        }
-        , __ins);
-        onPageShow(fun() {
-            uni__emit("onShow", fun() {});
-        }
-        , __ins);
         onReady(fun() {
             this.webviewContext = uni_createWebviewContext("web-view", this);
             this.webviewElement = uni_getElementById("web-view") as UniWebViewElement;
@@ -61,30 +44,19 @@ open class GenPagesIndexIndex : BasePage {
     override fun `$render`(): Any? {
         val _ctx = this;
         val _cache = this.`$`.renderCache;
-        val _component_x_button = resolveEasyComponent("x-button", GenUniModulesTmxUiComponentsXButtonXButtonClass);
-        return createElementVNode(Fragment, null, utsArrayOf(
-            createElementVNode("web-view", utsMapOf("id" to "web-view", "class" to "uni-flex-item", "style" to normalizeStyle(utsMapOf("pointer-events" to _ctx.pointerEvents)), "src" to _ctx.src, "webview-styles" to _ctx.webview_styles, "horizontalScrollBarAccess" to _ctx.horizontalScrollBarAccess, "verticalScrollBarAccess" to _ctx.verticalScrollBarAccess, "onMessage" to _ctx.message, "onError" to _ctx.error, "onLoading" to _ctx.loading, "onLoad" to _ctx.load, "onDownload" to _ctx.download, "onTouchstart" to _ctx.touchstart, "onClick" to _ctx.tap), null, 44, utsArrayOf(
-                "src",
-                "webview-styles",
-                "horizontalScrollBarAccess",
-                "verticalScrollBarAccess",
-                "onMessage",
-                "onError",
-                "onLoading",
-                "onLoad",
-                "onDownload",
-                "onTouchstart",
-                "onClick"
-            )),
-            createVNode(_component_x_button, utsMapOf("onClick" to _ctx.getWebview), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                return utsArrayOf(
-                    "获取web-view"
-                );
-            }
-            ), "_" to 1), 8, utsArrayOf(
-                "onClick"
-            ))
-        ), 64);
+        return createElementVNode("web-view", utsMapOf("id" to "web-view", "class" to "uni-flex-item", "style" to normalizeStyle(utsMapOf("pointer-events" to _ctx.pointerEvents, "margin-top" to ("" + _ctx.safeAreaTop + "px"), "display" to "flex")), "src" to _ctx.src, "webview-styles" to _ctx.webview_styles, "horizontalScrollBarAccess" to _ctx.horizontalScrollBarAccess, "verticalScrollBarAccess" to _ctx.verticalScrollBarAccess, "onMessage" to _ctx.message, "onError" to _ctx.error, "onLoading" to _ctx.loading, "onLoad" to _ctx.load, "onDownload" to _ctx.download, "onTouchstart" to _ctx.touchstart, "onClick" to _ctx.tap), null, 44, utsArrayOf(
+            "src",
+            "webview-styles",
+            "horizontalScrollBarAccess",
+            "verticalScrollBarAccess",
+            "onMessage",
+            "onError",
+            "onLoading",
+            "onLoad",
+            "onDownload",
+            "onTouchstart",
+            "onClick"
+        ));
     }
     open var src: String by `$data`;
     open var webview_styles: UTSJSONObject by `$data`;
@@ -101,17 +73,21 @@ open class GenPagesIndexIndex : BasePage {
     open var eventError: UTSJSONObject? by `$data`;
     open var pointerEvents: String by `$data`;
     open var isTouchEnable: Boolean by `$data`;
+    open var safeAreaTop: Number by `$data`;
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
         return utsMapOf("src" to "http://192.168.1.46:3721", "webview_styles" to object : UTSJSONObject() {
             var progress = object : UTSJSONObject() {
                 var color = "#0085d0"
             }
-        }, "webviewContext" to null as WebviewContext?, "webviewElement" to null as UniWebViewElement?, "loadError" to false, "horizontalScrollBarAccess" to true, "verticalScrollBarAccess" to true, "canGoBack" to false, "canGoForward" to false, "autoTest" to false, "eventLoading" to null as UTSJSONObject?, "eventLoad" to null as UTSJSONObject?, "eventError" to null as UTSJSONObject?, "pointerEvents" to "auto", "isTouchEnable" to false);
+        }, "webviewContext" to null as WebviewContext?, "webviewElement" to null as UniWebViewElement?, "loadError" to false, "horizontalScrollBarAccess" to true, "verticalScrollBarAccess" to true, "canGoBack" to false, "canGoForward" to false, "autoTest" to false, "eventLoading" to null as UTSJSONObject?, "eventLoad" to null as UTSJSONObject?, "eventError" to null as UTSJSONObject?, "pointerEvents" to "auto", "isTouchEnable" to false, "safeAreaTop" to computed<Number>(fun(): Number {
+            return uni_getSystemInfoSync().safeArea.top;
+        }
+        ));
     }
     override fun `$initMethods`() {
         this.getWebview = fun() {
-            console.log(this.webviewContext);
+            console.log(this.webviewElement);
         }
         ;
         this.back = fun() {

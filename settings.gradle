@@ -25,28 +25,7 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "tmui4-app"
+rootProject.name = "eflag-app-app"
 include ':app'
 include ':uniappx'
 include ':uts-get-native-view'
-include ':x-animation-s'
-include ':x-call-phone'
-include ':x-camrea-u'
-include ':x-clipboard-s'
-include ':x-crypto-s'
-include ':x-file-s'
-include ':x-loading-s'
-include ':x-mlkit-scannig-s'
-include ':x-mlkit-scannig-u'
-include ':x-modal-s'
-include ':x-network-change'
-include ':x-ocr-s'
-include ':x-openweb'
-include ':x-qr-u'
-include ':x-runnable-s'
-include ':x-screenshot-s'
-include ':x-share-s'
-include ':x-svg-u'
-include ':x-tips-s'
-include ':x-toast-s'
-include ':x-window-grey'
