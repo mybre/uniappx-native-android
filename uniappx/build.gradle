@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'cn.uvuejs.uniappx'
+    namespace 'cn.uvuejs.unix'
     compileSdk 34
 
     defaultConfig {
@@ -36,8 +36,7 @@ android {
 }
 
 dependencies {
-    compileOnly fileTree(include: ['*.aar', '*.jar'], dir: './libs')
-	compileOnly fileTree(include: ['*.aar', '*.jar'], dir: '../app/libs')
+    implementation fileTree(include: ['*.aar'], dir: './libs')
     implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.recyclerview:recyclerview:1.0.0")
     implementation("androidx.appcompat:appcompat:1.0.0")
@@ -60,5 +59,5 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
     implementation("com.squareup.okhttp3:okhttp:3.12.12")
     implementation("com.github.getActivity:XXPermissions:18.0")
-    implementation project(':uts-get-native-view')
+    implementation project(':kux-smb')
 }
